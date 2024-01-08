@@ -1,2 +1,2 @@
 # Linux-Hardening
-LINUX HARDENING BEST PRACTICES AUTOMATION SCRIPT
+The primary objective of this project is to automate the implementation of ANSSI's best practices and norms, focusing on specific chapters that address system hardening and Linux identification/authentication. By developing a comprehensive shell script, this project aims to facilitate the integration of ANSSI's guidelines into Linux-based systems in an efficient and user-friendly manner.
