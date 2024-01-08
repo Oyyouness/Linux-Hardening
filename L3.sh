@@ -19,7 +19,9 @@ chmod 1777 /var/tmp
 # Separate partitions for /home, /var, and /usr
 
 echo "Creating separate partitions for /home, /var, and /usr..."
+
 # We adjust the partition sizes based on our system and requirements
+
 dd if=/dev/zero of=/home_partition bs=1M count=10240
 mkfs.ext4 /home_partition
 mount -o loop /home_partition /home
