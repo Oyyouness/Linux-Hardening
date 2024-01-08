@@ -39,10 +39,6 @@ echo "TMOUT=600" >> /etc/profile
 echo "readonly TMOUT" >> /etc/profile
 echo "export TMOUT" >> /etc/profile
 
-# Enable Two-Factor Authentication (2FA)
-
-echo "Configuring Two-Factor Authentication..."
-# Note: This requires the installation and configuration of 2FA tools such as Google Authenticator.
 
 # Display a concluding message
 echo "ANSSI Authentication and Identification Hardening measures applied successfully. Restart services or reboot the system to activate changes."
