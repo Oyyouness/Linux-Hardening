@@ -10,6 +10,7 @@ systemctl disable bluetooth
 systemctl disable apache2
 
 # Enable and configure firewall (iptables or nftables)
+
 echo "Configuring firewall rules..."
 
 # In our work, we allowed SSH and blocked everything else, it all depends on the rules you want to set:
