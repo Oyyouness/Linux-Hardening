@@ -38,9 +38,9 @@ echo "install freevxfs /bin/true" > /etc/modprobe.d/freevxfs.conf
 
 echo "CONFIG_X86_16BIT=y" >> /usr/src/linux/.config
 
-# Restrict access to /dev/mem and /dev/kmem
 
 # Check if the script is being run as root
+
 if [ "$EUID" -ne 0 ]; then
   echo "Please run this script as root."
   exit 1
@@ -49,31 +49,39 @@ fi
 echo "Enabling kernel hardening features..."
 
 # Enable Address Space Layout Randomization (ASLR)
+
 echo "kernel.randomize_va_space=2" >> /etc/sysctl.conf
 sysctl -p
 
 # Enable ExecShield
+
 echo "kernel.exec-shield=1" >> /etc/sysctl.conf
 sysctl -p
 
 # Enable kernel module signing
+
 echo "options modprobe modules.sig_enforce=1" > /etc/modprobe.d/modules.conf
 
 # Enable strict file permissions on kernel modules
+
 chmod 0600 /etc/modprobe.d/modules.conf
 
 # Enable kernel module loading/unloading restrictions
+
 echo "install usb-storage /bin/true" > /etc/modprobe.d/disable-usb-storage.conf
 
 # Enable stricter ptrace security
+
 echo "kernel.yama.ptrace_scope=3" >> /etc/sysctl.conf
 sysctl -p
 
 # Set core dumps to a secure location
+
 echo "fs.suid_dumpable = 0" >> /etc/sysctl.conf
 sysctl -p
 
 # Disable kernel support for some unsafe CPU features
+
 echo "install cramfs /bin/true" > /etc/modprobe.d/disable-cramfs.conf
 echo "install freevxfs /bin/true" > /etc/modprobe.d/disable-freevxfs.conf
 echo "install jffs2 /bin/true" > /etc/modprobe.d/disable-jffs2.conf
@@ -81,6 +89,7 @@ echo "install hfs /bin/true" > /etc/modprobe.d/disable-hfs.conf
 echo "install hfsplus /bin/true" > /etc/modprobe.d/disable-hfsplus.conf
 
 # Restrict access to kernel logs
+
 chmod o-rwx /var/log/dmesg
 chmod o-rwx /var/log/kern.log
 
