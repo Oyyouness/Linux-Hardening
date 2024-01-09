@@ -89,11 +89,12 @@ fi
 
 apt-get install -y mokutil
 
-# Enable Secure Boot
+#### Enable Secure Boot ####
 
-mokutil --enable-secure-boot
+#mokutil --enable-secure-boot
 
-echo "Secure Boot has been enabled. Please follow the on-screen instructions to complete the process."
+#echo "Secure Boot has been enabled. Please follow the on-screen instructions to complete the process."
+#### We disabled Secure Boot temporarly because it was blocking the system booting ####
 
 # Set a GRUB bootloader password
 
